@@ -6,6 +6,19 @@ import UIKit
 
 // Your function here
 
+func average(of:[Double]) -> Double {
+    var count = Double()
+    
+    
+    for num in of {
+        count += num
+        
+    }
+    let result = count / Double(of.count)
+    return result
+}
+
+
 let testCasesOne: [([Double], Double)] = [
     (input: [1,2,3,4,5], expectedOutput: 3),
     (input: [1,42,1,541,42,6], expectedOutput: 105.5),
@@ -13,10 +26,10 @@ let testCasesOne: [([Double], Double)] = [
     (input: [1.5, 2.25, 4.5, -1.5], expectedOutput: 1.6875),
 ]
 
-//for (input, expectedOutput) in testCasesOne {
-//    let output = average(of: input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesOne {
+    let output = average(of: input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
 
 // Question Two
 
@@ -83,6 +96,12 @@ let testCasesFour = [
 
 // Your function here
 
+
+func secondSmallestValue(inn:[Int]) -> Int {
+    let sortedArray = inn.sorted()
+    return sortedArray[1]
+}
+
 let testCasesFive = [
     (input: [1,2,3,4], expectedOutput: 2),
     (input: [2,1,3,4], expectedOutput: 2),
@@ -91,7 +110,7 @@ let testCasesFive = [
     (input: [807,909,-22,424,244,873,-907,-350,-780,576,-177,278,-855,296,-33,-609,-664,-126,-469,-57,-376,-424,-477,-795,-481,-806,545,727,-879,210,-114,-783,-156,45,781,369,35,900,904,-2,168,489,-329,608,-287,40,442,362,-560,236,-583,698,544,-154,478,535,-397,363,470,-49,49,631,-62,-293,-419,-528,753,-809,-48,-888,606,-889,-908,672,-783,-921,-198,-428,701,-30,106,500,-106,199,-793,392,873,330,366,45,840,649,-135,-850,174,-338,901,-753,402,-62,554,-579,863,955,-999,-13,851,760,-523,-968,225,-173,-605,-759,306,657,844,168,-270,883,963,-835,624,570,705,333,-293,283,382,926,839,264,602,-940,160,-369,-770,-792,722,321,88,-176,-911,203,486,-175,-529,187,-668,518,-282,162,-165,-34,544,538,-828,-562,-154,591,345,-241,962,801,-632,-921,-710,588,-642,113,128,-242,56,716,-709,232,-870,241,-612,-583,-199,762,-601,-410,-896,-493,664,531,-613,-285,-951,-589,243,819,-195,911,-701,-368,-85,-316], expectedOutput: -968)
 ]
 
-//for (input, expectedOutput) in testCasesFive {
-//    let output = secondSmallestValue(in: input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesFive {
+    let output = secondSmallestValue(inn: input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
